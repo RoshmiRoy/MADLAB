@@ -1,0 +1,604 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          MAD LAB CYCLES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                  
+                                                                                                     ROSHMI ROY
+                                                                                                     S3:MCA
+                                                                                                     ROLLNO:46
+1.Design a login page
+XML CODE
+
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:layout_gravity="center"
+        android:id="@+id/et1" />
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+       />
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+     />
+     <Button
+         android:layout_width="200dp"
+         android:layout_height="50dp"
+         android:text="login"
+         android:id="@+id/b1"
+         android:onClick="login"
+         android:layout_gravity="center"
+         />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="cancel"
+        android:id="@+id/b2"
+        android:onClick="cancel"
+        android:layout_gravity="center"
+        />
+</LinearLayout>
+
+
+JAVACODE
+package com.example.sjcet.myapplication;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void login(View view) {
+        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
+    }
+}
+OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.change content in the text view in button click
+
+XML CODE
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="roshmi"/>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change"
+        android:onClick="change"/>
+</LinearLayout>
+JAVACODE
+package com.example.sjcet.a2pgm;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+    TextView tv;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv = findViewById(R.id.tv);
+    }
+    public void change(View view) {
+        tv.setText("ROSHMIROY");
+    }
+}
+OUTPUT
+
+        
+
+3.Read a content from edit text and print it in a text view.
+XML CODE
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="enter your name"
+        android:layout_gravity="center"
+        android:id="@+id/et1" />
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="display"
+        android:onClick="display"/>
+    </LinearLayout>
+JAVACODE
+package com.example.sjcet.pgm3;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+TextView tv;
+EditText et1;
+Button btn1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv = findViewById(R.id.tv);
+        et1 =findViewById(R.id.et1);
+        btn1=findViewById(R.id.btn1);
+    }
+    public void display(View view) {
+        String content = et1 .getText().toString();
+        tv.setText(content);
+    }
+}
+OUTPUT
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.change the background color on a button click
+XML CODE
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv"
+        android:gravity="center"
+        android:text="would you like this"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change"
+        android:id="@+id/b1"
+        android:onClick="click"/>
+</LinearLayout>
+
+
+
+JAVACODE
+package com.example.sjcet.pgm14;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+TextView tv;
+Button b1;
+View v1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1 = findViewById(R.id.b1);
+        v1 = this .getWindow().getDecorView();
+    }
+    public void click(View view) {
+      v1.setBackgroundResource(android.R.color.holo_blue_dark);
+    }
+}
+
+OUTPUT
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.create sample calculator
+XML CODE
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/edt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button4"
+        android:layout_alignRight="@+id/button4"
+        android:layout_below="@+id/edt1"
+        android:layout_marginTop="94dp"
+        android:text="1" />
+    <Button
+        android:id="@+id/button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button1"
+        android:layout_toLeftOf="@+id/button3"
+        android:layout_toStartOf="@+id/button3"
+        android:text="2" />
+    <Button
+        android:id="@+id/button3"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:text="3" />
+    <Button
+        android:id="@+id/button4"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_toLeftOf="@+id/button2"
+        android:text="4" />
+    <Button
+        android:id="@+id/button5"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:text="5" />
+    <Button
+        android:id="@+id/button6"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3"
+        android:layout_below="@+id/button3"
+        android:text="6" />
+    <Button
+        android:id="@+id/button7"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button4"
+        android:layout_toLeftOf="@+id/button2"
+        android:text="7" />
+    <Button
+        android:id="@+id/button8"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5"
+        android:layout_below="@+id/button5"
+        android:text="8" />
+    <Button
+        android:id="@+id/button9"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button6"
+        android:layout_alignStart="@+id/button6"
+        android:layout_below="@+id/button6"
+        android:text="9" />
+    <Button
+        android:id="@+id/buttonadd"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edt1"
+        android:layout_alignRight="@+id/edt1"
+        android:layout_alignTop="@+id/button3"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:layout_toRightOf="@+id/button3"
+        android:text="+" />
+    <Button
+        android:id="@+id/buttonsub"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonadd"
+        android:layout_alignLeft="@+id/buttonadd"
+        android:layout_alignRight="@+id/buttonadd"
+        android:layout_alignStart="@+id/buttonadd"
+        android:layout_below="@+id/buttonadd"
+        android:text="-" />
+    <Button
+        android:id="@+id/buttonmul"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonsub"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/buttonsub"
+        android:layout_below="@+id/buttonsub"
+        android:text="*" />
+
+JAVACODE
+package com.example.sjcet.pgm5;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+public class MainActivity extends AppCompatActivity {
+    Button button0, button1, button2, button3, button4, button5, button6,
+            button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
+            buttonMul, button10, buttonC, buttonEqual;
+    EditText crunchifyEditText;
+    float mValueOne, mValueTwo;
+    boolean crunchifyAddition, mSubtract, crunchifyMultiplication, crunchifyDivision;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        button0 = (Button) findViewById(R.id.button0);
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
+        button5 = (Button) findViewById(R.id.button5);
+        button6 = (Button) findViewById(R.id.button6);
+        button7 = (Button) findViewById(R.id.button7);
+        button8 = (Button) findViewById(R.id.button8);
+        button9 = (Button) findViewById(R.id.button9);
+        button10 = (Button) findViewById(R.id.button10);
+        buttonAdd = (Button) findViewById(R.id.buttonadd);
+        buttonSub = (Button) findViewById(R.id.buttonsub);
+        buttonMul = (Button) findViewById(R.id.buttonmul);
+        buttonDivision = (Button) findViewById(R.id.buttondiv);
+        buttonC = (Button) findViewById(R.id.buttonC);
+        buttonEqual = (Button) findViewById(R.id.buttoneql);
+        crunchifyEditText = (EditText) findViewById(R.id.edt1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "1");
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "2");
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "3");
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "4");
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "5");
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "6");
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "7");
+            }
+        });
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "8");
+            }
+        });
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "9");
+            }
+        });
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + "0");
+            }
+        });
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (crunchifyEditText == null) {
+                    crunchifyEditText.setText("");
+                } else {
+                    mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                    crunchifyAddition = true;
+                    crunchifyEditText.setText(null);
+                }
+            }
+        });
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                mSubtract = true;
+                crunchifyEditText.setText(null);
+            }
+        });
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                crunchifyMultiplication = true;
+                crunchifyEditText.setText(null);
+            }
+        });
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                crunchifyDivision = true;
+                crunchifyEditText.setText(null);
+            }
+        });
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueTwo = Float.parseFloat(crunchifyEditText.getText() + "");
+                if (crunchifyAddition == true) {
+                    crunchifyEditText.setText(mValueOne + mValueTwo + "");
+                    crunchifyAddition = false;
+                }
+                if (mSubtract == true) {
+                    crunchifyEditText.setText(mValueOne - mValueTwo + "");
+                    mSubtract = false;
+                }
+                if (crunchifyMultiplication == true) {
+                    crunchifyEditText.setText(mValueOne * mValueTwo + "");
+                    crunchifyMultiplication = false;
+                }
+                if (crunchifyDivision == true) {
+                    crunchifyEditText.setText(mValueOne / mValueTwo + "");
+                    crunchifyDivision = false;
+                }
+            }
+        });
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText("");
+            }
+        });
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText(crunchifyEditText.getText() + ".");
+            }
+        });
+    }
+}
+
+OUTPUT
+
+
+
+
+
+                         
+
+     
