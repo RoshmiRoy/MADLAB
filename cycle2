@@ -63,20 +63,41 @@ public class NewActivity extends AppCompatActivity {
 }
 
 
+   2.Create an activity and move to facebook login page on button click.
+Activity main.xml
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
    
-
-
-
-
-
-
-
-
-
-
-
-
-2.Create an activity and move to facebook login page on button click.
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b1"
+        android:text="move"
+        android:onClick="move"/>
+</LinearLayout>
+mainactivity.java
+package com.example.sjcet.facebook;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.net.Uri;
+import android.content.Intent;
+public class MainActivity extends AppCompatActivity {
+Button b1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1=  findViewById(R.id.b1);
+    }
+    public void move(View view) {
+        Intent intent = new     Intent(Intent.ACTION_VIEW,Uri.parse("https://facebook.com"));
+        startActivity(intent);
+    }
+}
 
 
 
